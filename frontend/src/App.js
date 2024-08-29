@@ -9,7 +9,8 @@ function App() {
     const specifications = { /* user specified options */ };
     try {
       const data = await generateCharacter(specifications);
-      setCharacter(data.character);
+      console.log(data);
+      setCharacter(data);
     } catch (error) {
       console.error('Error generating character:', error);
     }
@@ -43,6 +44,7 @@ function App() {
             <h2 className="generated-header">Generated Character</h2>
             <p><strong>Name:</strong> {character.name}</p>
             <p><strong>Class:</strong> {character.class}</p>
+            <p><strong>Subclass:</strong> {character.subclass}</p>
             <p><strong>Race:</strong> {character.race}</p>
             <p><strong>Alignment:</strong> {character.alignment}</p>
           </div>
