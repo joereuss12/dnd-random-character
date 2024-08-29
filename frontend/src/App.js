@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { generateCharacter } from './apiService'; // Import api service
 
@@ -16,26 +15,43 @@ function App() {
     }
   };
 
-
+  //having one row and a column class in case decided later on for multiple columns
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="container">
+      <div className="settings">
+        <h2>Settings</h2>
+        <div className="checkbox-group">
+          <label>
+            <input type="checkbox" /> Random Name
+          </label>
+          <label>
+            <input type="checkbox" /> Random Class
+          </label>
+          <label>
+            <input type="checkbox" /> Random Race
+          </label>
+          <label>
+            <input type="checkbox" /> Random Alignment
+          </label>
+        </div>
         <button onClick={handleGenerateCharacter}>Generate Character</button>
-        {character && <div>Generated Character: {character}</div>}
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      <div className="character-content">
+        {character ? (
+          <div className="character-details">
+            <h2 className="generated-header">Generated Character</h2>
+            <p><strong>Name:</strong> {character.name}</p>
+            <p><strong>Class:</strong> {character.class}</p>
+            <p><strong>Race:</strong> {character.race}</p>
+            <p><strong>Alignment:</strong> {character.alignment}</p>
+          </div>
+        ) : (
+          <p className="placeholder">Your generated character will appear here...</p>
+        )}
+      </div>
     </div>
+  </div>
   );
 }
 

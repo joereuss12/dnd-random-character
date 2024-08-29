@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/* body {
+  background-color: #2B2B2B;
+  color: #DAA520;
+  font-family: 'Crimson Text';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.settings-column {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  float: left;
+  padding: 15px;
+  width: 25%;
+  height: 100%;
+  background-color: #474747;
+}
+
+@media screen and (max-width: 600px) {
+  .settings-column, .column {
+    width: 100%;
+  }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  background-color: #2B2B2B;
+}
+
+.header {
+  background-color: #8B0000;
+  text-align: center;
+  padding: 5px;
+  font-family: 'Almendra SC';
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.settings {
+  width: 30%;
+  background-color: #474747;
+  padding: 20px;
+  color: #DAA520;
+}
+
+.settings h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.checkbox-group {
+  margin-bottom: 20px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.settings button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  border: none;
   color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.settings button:hover {
+  background-color: #2980b9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.character-content {
+  width: 70%;
+  padding: 40px;
+  background-color: #2B2B2B;
+  display: flex;
+}
+
+.generated-header {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.character-details {
+  max-width: 400px;
+  text-align: left;
+}
+
+.character-details h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #DAA520;
+}
+
+.character-details p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #DAA520;
+}
+
+.placeholder {
+  font-size: 1.2rem;
+  color: #7f8c8d;
 }
